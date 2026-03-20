@@ -94,8 +94,9 @@ export default function Home() {
               <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
                 Потерянное будущее
               </h1>
-              <p className="text-lg md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-                Добавьте описание вашего проекта здесь
+              <p className="text-lg md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed mb-8" style={{ fontFamily: "var(--font-body)" }}>
+                Кладбище мечт. Здесь собраны истории потерянных надежд и забытых будущих. 
+                Проект постоянно обновляется с новыми историями о потерянных возможностях и мечтах.
               </p>
             </div>
           </div>
@@ -126,13 +127,7 @@ export default function Home() {
               </button>
             </div>
 
-            {/* About Project Text */}
-            <div className="mt-12 max-w-4xl mx-auto border-2 border-foreground p-8">
-              <p className="text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-                Этот проект посвящён памяти погибших солдат. Здесь собраны истории мужества и героизма. 
-                Проект постоянно обновляется с новыми биографиями и историями.
-              </p>
-            </div>
+
           </div>
         </section>
 

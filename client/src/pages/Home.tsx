@@ -2,7 +2,7 @@
  * Home Page - Lost Future Website
  * 
  * Design Philosophy: Minimalist black and white with serious typography
- * - Hero section with title
+ * - Hero section with title and quote in square frame
  * - Search bar and "About" button with square borders
  * - Biography section with alternating image/text layout
  * - Support for background images
@@ -20,7 +20,8 @@ export default function Home() {
   //    {
   //      id: 5,                                    // Уникальный номер (должен быть больше предыдущего)
   //      name: "Имя человека",                    // Полное имя
-  //      date: "15.03.2024",                       // Дата (в формате ДД.МММ.ГГГГ)
+  //      birthDate: "15.03.1990",                  // Дата рождения (в формате ДД.МММ.ГГГГ)
+  //      deathDate: "20.03.2024",                  // Дата смерти (в формате ДД.МММ.ГГГГ)
   //      description: "Описание биографии...",     // Текст с информацией о человеке
   //      imageUrl: "https://example.com/image.jpg", // URL изображения (квадратное)
   //    }
@@ -32,28 +33,32 @@ export default function Home() {
     {
       id: 1,
       name: "Биография 1",
-      date: "15.03.2024",
+      birthDate: "15.03.1990",
+      deathDate: "20.03.2024",
       description: "Добавьте описание здесь",
       imageUrl: "", // Вставьте URL изображения
     },
     {
       id: 2,
       name: "Биография 2",
-      date: "20.03.2024",
+      birthDate: "10.05.1985",
+      deathDate: "25.03.2024",
       description: "Добавьте описание здесь",
       imageUrl: "", // Вставьте URL изображения
     },
     {
       id: 3,
       name: "Биография 3",
-      date: "25.03.2024",
+      birthDate: "22.07.1992",
+      deathDate: "30.03.2024",
       description: "Добавьте описание здесь",
       imageUrl: "", // Вставьте URL изображения
     },
     {
       id: 4,
       name: "Биография 4",
-      date: "30.03.2024",
+      birthDate: "08.11.1988",
+      deathDate: "05.04.2024",
       description: "Добавьте описание здесь",
       imageUrl: "", // Вставьте URL изображения
     },
@@ -66,8 +71,11 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter biographies based on search query
+  // Поиск работает по: имени, датам рождения/смерти и описанию
   const filteredBiographies = biographies.filter((bio) =>
     bio.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    bio.birthDate.includes(searchQuery) ||
+    bio.deathDate.includes(searchQuery) ||
     bio.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -91,13 +99,17 @@ export default function Home() {
         <section className="hero-section min-h-screen flex items-center justify-center">
           <div className="container px-4 md:px-8">
             <div className="text-center">
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              <h1 className="text-6xl md:text-8xl font-bold mb-12 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
                 Потерянное будущее
               </h1>
-              <p className="text-lg md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed mb-8" style={{ fontFamily: "var(--font-body)" }}>
-                Кладбище мечт. Здесь собраны истории потерянных надежд и забытых будущих. 
-                Проект постоянно обновляется с новыми историями о потерянных возможностях и мечтах.
-              </p>
+              
+              {/* Quote in Square Frame */}
+              <div className="border-2 border-foreground p-8 md:p-12 max-w-3xl mx-auto">
+                <p className="text-lg md:text-xl text-foreground leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+                  Кладбище мечт. Здесь собраны истории потерянных надежд и забытых будущих. 
+                  Проект постоянно обновляется с новыми историями о потерянных возможностях и мечтах.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -110,7 +122,7 @@ export default function Home() {
               <div className="w-full md:w-96">
                 <input
                   type="text"
-                  placeholder="Поиск биографии..."
+                  placeholder="Поиск по имени, дате или описанию..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-6 py-4 bg-background text-foreground border-2 border-foreground placeholder-gray-500 focus:outline-none"
@@ -126,8 +138,6 @@ export default function Home() {
                 Подробнее
               </button>
             </div>
-
-
           </div>
         </section>
 
@@ -166,12 +176,12 @@ export default function Home() {
 
                       {/* Text Container */}
                       <div className={`text-container ${isEven ? "md:order-2" : "md:order-1"}`}>
-                        {/* Date */}
+                        {/* Birth and Death Dates */}
                         <p 
                           className="text-sm md:text-base text-foreground mb-2" 
                           style={{ fontFamily: "var(--font-body)" }}
                         >
-                          {bio.date}
+                          {bio.birthDate} / {bio.deathDate}
                         </p>
 
                         {/* Name */}

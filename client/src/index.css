@@ -43,16 +43,16 @@
 }
 
 :root {
-  /* Dark Blue Melancholic Palette */
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
+  /* Dark Grayscale Palette */
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #333333;
+  --sidebar-primary-foreground: #ffffff;
+  --chart-1: #666666;
+  --chart-2: #777777;
+  --chart-3: #888888;
+  --chart-4: #999999;
+  --chart-5: #aaaaaa;
   --radius: 0.65rem;
   --background: #0f1b2e;
   --foreground: #c5d3e0;
@@ -80,11 +80,11 @@
 }
 
 .dark {
-  /* Dark Blue Melancholic Theme */
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
+  /* Dark Grayscale Theme */
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #333333;
+  --sidebar-primary-foreground: #ffffff;
   --background: #0f1b2e;
   --foreground: #c5d3e0;
   --card: #1a2d42;
@@ -102,11 +102,11 @@
   --border: #2a3d52;
   --input: #1a2d42;
   --ring: #5a7a9a;
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
+  --chart-1: #666666;
+  --chart-2: #777777;
+  --chart-3: #888888;
+  --chart-4: #999999;
+  --chart-5: #aaaaaa;
   --sidebar: #1a2d42;
   --sidebar-foreground: #c5d3e0;
   --sidebar-accent: #5a7a9a;

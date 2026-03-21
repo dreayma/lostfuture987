@@ -36,10 +36,10 @@ export default function Home() {
   const biographies = [
     {
       id: 1,
-      name: "Биография 1",
-      birthDate: "15.03.1990",
-      deathDate: "20.03.2024",
-      description: "Добавьте описание здесь",
+      name: "Шишенко Александр",
+      birthDate: "07.07.2003",
+      deathDate: "04.03.2024",
+      description: "Коллектив и студенты ГБПОУ ЕТОТ выражают глубокие соболезнования родным и близким, в связи с гибелью",
       imageUrl: "/images/soldier-1.jpeg", // Путь к картинке в папке public/images
     },
     {
@@ -52,18 +52,18 @@ export default function Home() {
     },
     {
       id: 3,
-      name: "Биография 3",
-      birthDate: "22.07.1992",
-      deathDate: "30.03.2024",
-      description: "Добавьте описание здесь",
+      name: "Анатолий",
+      birthDate: "11.03.2002",
+      deathDate: "20.03.2024",
+      description: "Родился Анатолий 11 февраля 2002 года в селе Майск, был единственным ребенком в семье, учился в Курумканской СОШ № 2, выпускник Могойтинского филиала "Байкальского колледжа туризма и сервиса".",
       imageUrl: "/images/soldier-3.jpeg", // Путь к картинке в папке public/images
     },
     {
       id: 4,
-      name: "Биография 4",
-      birthDate: "08.11.1988",
-      deathDate: "05.04.2024",
-      description: "Добавьте описание здесь",
+      name: "Лавинишников Никита Владимирович",
+      birthDate: "02.09.2000",
+      deathDate: "14.08.2024",
+      description: "Никита был скромным, отзывчивым, спокойным, справедливым и ответственным парнем. И когда Родина оказалась в опасности, принял решение - идти защищать! Он хотел вернуться домой, воспитывать сына, жить со своей семьёй",
       imageUrl: "/images/soldier-4.jpeg", // Путь к картинке в папке public/images
     },
   ];
@@ -84,7 +84,7 @@ export default function Home() {
   );
 
   return (
-    <div 
+    <div
       className="min-h-screen bg-background text-foreground"
       style={{
         backgroundImage: backgroundImageUrl ? `url(${backgroundImageUrl})` : "none",
@@ -106,11 +106,11 @@ export default function Home() {
               <h1 className="text-6xl md:text-8xl font-bold mb-12 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
                 Потерянное будущее
               </h1>
-              
+
               {/* Quote in Square Frame */}
               <div className="border-2 border-foreground p-8 md:p-12 max-w-3xl mx-auto">
                 <p className="text-lg md:text-xl text-foreground leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-                  Кладбище мечт. Здесь собраны истории потерянных надежд и забытых будущих. 
+                  Кладбище мечт. Здесь собраны истории потерянных надежд и забытых будущих.
                   Проект постоянно обновляется с новыми историями о потерянных возможностях и мечтах.
                 </p>
               </div>
@@ -153,7 +153,7 @@ export default function Home() {
               {filteredBiographies.length > 0 ? (
                 filteredBiographies.map((bio, index) => {
                   const isEven = index % 2 === 0;
-                  
+
                   return (
                     <div
                       key={bio.id}
@@ -181,24 +181,24 @@ export default function Home() {
                       {/* Text Container */}
                       <div className={`text-container ${isEven ? "md:order-2" : "md:order-1"}`}>
                         {/* Birth and Death Dates */}
-                        <p 
-                          className="text-sm md:text-base text-foreground mb-2" 
+                        <p
+                          className="text-sm md:text-base text-foreground mb-2"
                           style={{ fontFamily: "var(--font-body)" }}
                         >
                           {bio.birthDate} / {bio.deathDate}
                         </p>
 
                         {/* Name */}
-                        <h3 
-                          className="text-3xl md:text-4xl font-bold mb-4" 
+                        <h3
+                          className="text-3xl md:text-4xl font-bold mb-4"
                           style={{ fontFamily: "var(--font-display)" }}
                         >
                           {bio.name}
                         </h3>
 
                         {/* Description */}
-                        <p 
-                          className="text-lg md:text-xl text-foreground leading-relaxed" 
+                        <p
+                          className="text-lg md:text-xl text-foreground leading-relaxed"
                           style={{ fontFamily: "var(--font-body)" }}
                         >
                           {bio.description}

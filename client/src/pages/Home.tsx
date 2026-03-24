@@ -1,6 +1,6 @@
 /**
  * Home Page - Lost Future Website
- * 
+ *
  * Design Philosophy: Minimalist black and white with serious typography
  * - Hero section with title and quote in square frame
  * - Search bar and "About" button with square borders
@@ -39,7 +39,8 @@ export default function Home() {
       name: "Шишенко Александр",
       birthDate: "07.07.2003",
       deathDate: "04.03.2024",
-      description: "Коллектив и студенты ГБПОУ ЕТОТ выражают глубокие соболезнования родным и близким, в связи с гибелью Александра хотел стать фермером",
+      description:
+        "Коллектив и студенты ГБПОУ ЕТОТ выражают глубокие соболезнования родным и близким, в связи с гибелью Александра хотел стать фермером",
       imageUrl: "/images/soldier-1.jpeg", // Путь к картинке в папке public/images
     },
     {
@@ -47,7 +48,8 @@ export default function Home() {
       name: "Рябов Андрей Васильевич",
       birthDate: "04.03.1994",
       deathDate: "13.01.2026",
-      description: "Андрей был призван защищать Родину в сентябре 2022 года, служил наводчиком мотострелкового отделения. Он погиб 13 января 2026 года в районе населённого пункта Плехово Суджанского района Курской области. Хотел стать Ученым физиком",
+      description:
+        "Андрей был призван защищать Родину в сентябре 2022 года, служил наводчиком мотострелкового отделения. Он погиб 13 января 2026 года в районе населённого пункта Плехово Суджанского района Курской области. Хотел стать Ученым физиком",
       imageUrl: "/images/soldier-2.jpeg", // Путь к картинке в папке public/images
     },
     {
@@ -55,7 +57,8 @@ export default function Home() {
       name: "Анатолий",
       birthDate: "11.03.2002",
       deathDate: "20.03.2024",
-      description: "Родился Анатолий 11 февраля 2002 года в селе Майск, был единственным ребенком в семье, учился в Курумканской СОШ № 2, выпускник Могойтинского филиала Байкальского колледжа туризма и сервиса. Хотел стать Программистом",
+      description:
+        "Родился Анатолий 11 февраля 2002 года в селе Майск, был единственным ребенком в семье, учился в Курумканской СОШ № 2, выпускник Могойтинского филиала Байкальского колледжа туризма и сервиса. Хотел стать Программистом",
       imageUrl: "/images/soldier-3.jpeg", // Путь к картинке в папке public/images
     },
     {
@@ -63,31 +66,35 @@ export default function Home() {
       name: "Лавинишников Никита Владимирович",
       birthDate: "02.09.2000",
       deathDate: "14.08.2024",
-      description: "Никита был скромным, отзывчивым, спокойным, справедливым и ответственным парнем. И когда Родина оказалась в опасности, принял решение - идти защищать! Он хотел вернуться домой, воспитывать сына, жить со своей семьёй",
+      description:
+        "Никита был скромным, отзывчивым, спокойным, справедливым и ответственным парнем. И когда Родина оказалась в опасности, принял решение - идти защищать! Он хотел вернуться домой, воспитывать сына, жить со своей семьёй",
       imageUrl: "/images/soldier-4.jpeg", // Путь к картинке в папке public/images
     },
   ];
 
   // Optional: Set background image for the entire page
-  const backgroundImageUrl = ""; // Вставьте URL фонового изображения
+  const backgroundImageUrl = "/images/background.jpg";
 
   // State for search
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter biographies based on search query
   // Поиск работает по: имени, датам рождения/смерти и описанию
-  const filteredBiographies = biographies.filter((bio) =>
-    bio.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    bio.birthDate.includes(searchQuery) ||
-    bio.deathDate.includes(searchQuery) ||
-    bio.description.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredBiographies = biographies.filter(
+    bio =>
+      bio.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      bio.birthDate.includes(searchQuery) ||
+      bio.deathDate.includes(searchQuery) ||
+      bio.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div
       className="min-h-screen bg-background text-foreground"
       style={{
-        backgroundImage: backgroundImageUrl ? `url(${backgroundImageUrl})` : "none",
+        backgroundImage: backgroundImageUrl
+          ? `url(${backgroundImageUrl})`
+          : "none",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
@@ -103,15 +110,22 @@ export default function Home() {
         <section className="hero-section min-h-screen flex items-center justify-center">
           <div className="container px-4 md:px-8">
             <div className="text-center">
-              <h1 className="text-6xl md:text-8xl font-bold mb-12 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              <h1
+                className="text-6xl md:text-8xl font-bold mb-12 tracking-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
                 Потерянное будущее
               </h1>
 
               {/* Quote in Square Frame */}
               <div className="border-2 border-foreground p-8 md:p-12 max-w-3xl mx-auto">
-                <p className="text-lg md:text-xl text-foreground leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-                  Кладбище мечт. Здесь собраны истории потерянных надежд и забытых будущих.
-                  Проект постоянно обновляется с новыми историями о потерянных возможностях и мечтах.
+                <p
+                  className="text-lg md:text-xl text-foreground leading-relaxed"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Кладбище мечт. Здесь собраны истории потерянных надежд и
+                  забытых будущих. Проект постоянно обновляется с новыми
+                  историями о потерянных возможностях и мечтах.
                 </p>
               </div>
             </div>
@@ -128,7 +142,7 @@ export default function Home() {
                   type="text"
                   placeholder="Поиск по имени, дате или описанию..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={e => setSearchQuery(e.target.value)}
                   className="w-full px-6 py-4 bg-background text-foreground border-2 border-foreground placeholder-gray-500 focus:outline-none"
                   style={{ fontFamily: "var(--font-body)" }}
                 />
@@ -160,7 +174,9 @@ export default function Home() {
                       className={`biography-item-${bio.id} grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center`}
                     >
                       {/* Image Container - Strictly Square */}
-                      <div className={`image-container ${isEven ? "md:order-1" : "md:order-2"}`}>
+                      <div
+                        className={`image-container ${isEven ? "md:order-1" : "md:order-2"}`}
+                      >
                         <div className="aspect-square bg-foreground overflow-hidden">
                           {bio.imageUrl ? (
                             <img
@@ -179,7 +195,9 @@ export default function Home() {
                       </div>
 
                       {/* Text Container */}
-                      <div className={`text-container ${isEven ? "md:order-2" : "md:order-1"}`}>
+                      <div
+                        className={`text-container ${isEven ? "md:order-2" : "md:order-1"}`}
+                      >
                         {/* Birth and Death Dates */}
                         <p
                           className="text-sm md:text-base text-foreground mb-2"
@@ -209,7 +227,10 @@ export default function Home() {
                 })
               ) : (
                 <div className="text-center py-12">
-                  <p className="text-xl text-foreground" style={{ fontFamily: "var(--font-body)" }}>
+                  <p
+                    className="text-xl text-foreground"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
                     Биографии не найдены
                   </p>
                 </div>
